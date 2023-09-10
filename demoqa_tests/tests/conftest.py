@@ -5,9 +5,19 @@ from selenium.webdriver.chrome.options import Options
 from selene import browser
 
 
+@pytest.fixture(autouse=True)
+def url():
+    browser.config.base_url = "https://demoqa.com"
+
+
+@pytest.fixture(scope='function', autouse=True)
+def window_size():
+    browser.config.window_width = 1400
+    browser.config.window_height = 1600
+
+
 @pytest.fixture(scope='function', autouse=True)
 def setup_browser():
-    browser.config.base_url = 'https://demoqa.com'
     browser_version = "100.0"
     options = Options()
     selenoid_capabilities = {
