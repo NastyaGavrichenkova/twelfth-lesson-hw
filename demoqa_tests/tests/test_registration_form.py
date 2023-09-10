@@ -1,7 +1,9 @@
+import allure
 from demoqa_tests.data import users
 from demoqa_tests.model.registration_page import RegistrationPage
 
 
+@allure.title('Successful registration')
 def test_successful_registration():
     registration_page = RegistrationPage()
     registration_page.open()
