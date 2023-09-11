@@ -43,7 +43,7 @@ class RegistrationPage:
         browser.element('#dateOfBirthInput').click()
         browser.element('.react-datepicker__month-select').send_keys(month)
         browser.element('.react-datepicker__year-select').click().send_keys(year)
-        browser.element(f'.react-datepicker__day--0{day}').click()
+        browser.element(f'.react-datepicker__day--0{day}')
 
     @allure.step('Select subject')
     def select_subject(self, value):
